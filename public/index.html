@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>btnn world</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="page">
+	<div class="container" id="world">
+
+	  <!-- main -->
+	  <div class="window title-window" data-id="face" data-nx="0.055" data-ny="0.0755" data-static data-clickable>
+		<span class="hover-text">(*˶˃ ᵕ ˂˶)b</span>
+	  </div>
+
+	  <div class="window title-window" data-id="title-2" data-nx="0.09" data-ny="0.129" data-static>
+		<span class="motion-text">welcome</span>
+	  </div>
+
+	  <div class="window title-window" data-id="title-3" data-nx="0.055" data-ny="0.18" data-static>
+		<span class="motion-text">btnn’s world</span>
+	  </div>
+
+	  <!-- me -->
+	  <div class="window text-window" data-id="rotating-text" data-nx="0.29" data-ny="0.20" data-mass="1">
+	    <span>hi, i'm britnie and i </span>
+	    <span id="typewriter"></span>
+	    <span class="cursor">|</span>
+	  </div>
+
+	  <div class="window image-card" data-id="cat" data-nx="0.72" data-ny="0.05" data-mass="5">
+		<div class="label">little_cat</div>
+		<img src="little_cat.webp" alt="a photo of my little cat"/>
+	  </div>
+
+	  <div class="window image-card small-image" data-id="bchar" data-nx="0.12" data-ny="0.55" data-mass="5">
+		<div class="label">maple</div>
+		<img src="maple.webp" alt="a photo of my maplestory character"/>
+	  </div>
+
+	  <div class="window image-card" data-id="b" data-nx="0.81" data-ny="0.17" data-mass="5">
+		<div class="label">ty_meg</div>
+		<img src="ty_meg.webp" alt="a photo of btnn"/>
+	  </div>
+
+	  <div class="window text-window" data-id="contact" data-nx="0.07" data-ny="0.8" data-mass="1.5">
+		britnienguyen (at) gmail (dot) com
+	  </div>
+
+	  <div class="window text-window" data-id="updated" data-nx="0.11" data-ny="0.87" data-mass="1.5">
+		<span class="label">last updated <i>26 APR 2026</i></span>
+	  </div>
+
+	  <div class="window title-window" data-id="link1" data-nx="0.84" data-ny="0.65" data-mass="1">
+		<a href="/archive.html">archive</a>
+	  </div>
+
+	  <div class="window title-window" data-id="link2" data-nx="0.89" data-ny="0.70" data-mass="1">
+		<a href="https://www.linkedin.com/in/britnienguyen/" target="_blank">connect</a>
+	  </div>
+
+	  <div class="window title-window" data-id="link3" data-nx="0.80" data-ny="0.78" data-mass="1">
+		<a href="https://www.instagram.com/btnnarchive/" target="_blank">instagram</a>
+	  </div>
+
+	  <div class="window text-window" data-id="disclaim" data-nx="0.89" data-ny="0.89" data-mass="1">
+		<span class="label">:p</span>
+	  </div>
+
+	  <!-- funsies ... todo... music.. guestbook...-->
+	  <div class="window note-box" data-id="note" data-nx="0.42" data-ny="0.60">
+
+		<input type="color" id="brushColor" class="color-input" value="#000000" />
+        <canvas class="draw-area" id="canvas"></canvas>
+
+        <div class="button-row">
+          <button class="clear-btn">clear</button>
+        </div>
+
+      </div>
+
+	</div>
+  </div>
+
+  <script src="drag.js"></script>
+  <script src="clickable.js"></script>
+  <script src="draw.js"></script>
+  <script src="guestbook.js"></script>
+  <script src="text-type.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,244 @@
+:root {
+  --bg: #f8f8f8;
+  --border: #dddddd;
+  --accent: #B080B5;
+  --text: #3C3C3C;
+  --muted: #7a7a7a;
+  --surface: #ffffff;
+  --shadow: 0 1px 0 rgba(0,0,0,0.03);
+}
+
+/* -------------------------
+   BASE
+-------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  font-family: "Inter", sans-serif;
+  font-size: 12px;
+  color: var(--text);
+}
+
+/* -------------------------
+   WORLD
+-------------------------- */
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.container {
+  position: relative;
+  width: clamp(320px, 80vw, 1100px);
+  height: clamp(500px, 80vh, 800px);
+  border: 1px dotted var(--accent);
+  overflow: hidden;
+}
+
+/* -------------------------
+   WINDOW ENGINE CORE
+-------------------------- */
+
+.window {
+  position: absolute;
+  user-select: none;
+  will-change: transform;
+  cursor: grab;
+  box-shadow: var(--shadow);
+
+  touch-action: none;
+}
+
+.window:active {
+  cursor: grabbing;
+}
+
+.window.is-dragging {
+  z-index: 999;
+}
+
+/* -------------------------
+   SHARED WINDOWS
+-------------------------- */
+
+.title-window,
+.text-window,
+.image-card,
+.note-box {
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+/* -------------------------
+   TITLE
+-------------------------- */
+
+.title-window {
+  color: var(--accent);
+  font-weight: 500;
+  padding: 4px 16px;
+  letter-spacing: 0.5px;
+  text-transform: lowercase;
+}
+
+/* -------------------------
+   TEXT
+-------------------------- */
+
+.text-window {
+  padding: 4px 16px;
+  line-height: 2;
+  max-width: 240px;
+}
+
+/* -------------------------
+   IMAGE CARD (DRAG SAFE)
+-------------------------- */
+
+.image-card {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 4px;
+
+  width: max-content;
+  height: max-content;
+}
+
+.image-card img {
+  display: block;
+  max-width: 140px;
+  height: auto;
+
+  pointer-events: none;
+}
+
+.small-image img {
+  max-width: 90px;
+}
+
+/* -------------------------
+   NOTE / DRAW WINDOW (FIXED)
+-------------------------- */
+
+.note-box {
+  width: 180px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  padding: 6px;
+}
+
+/* canvas */
+.draw-area {
+  width: 100%;
+  height: 90px;
+
+  display: block;
+
+  border: 1px solid var(--border);
+  background: transparent;
+
+  cursor: crosshair;
+}
+
+/* color picker */
+.color-input {
+  width: 100%;
+  height: 26px;
+
+  border: 1px solid var(--border);
+  background: var(--surface);
+
+  cursor: pointer;
+}
+
+/* buttons */
+.button-row {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.button-row button {
+  flex: 1;
+  height: 24px;
+
+  border: 1px solid var(--border);
+  background: var(--surface);
+
+  font-size: 10px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* -------------------------
+   ARE.NA GUESTBOOK (CRITICAL FIX)
+-------------------------- */
+
+#arena-wall {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+}
+
+/* allow interaction only on windows inside */
+#arena-wall .window {
+  pointer-events: auto;
+}
+
+/* -------------------------
+   HELPERS
+-------------------------- */
+
+.muted {
+  color: var(--muted);
+}
+
+.label {
+  font-size: 10px;
+  margin-bottom: 4px;
+  color: var(--muted);
+}
+
+#typewriter {
+  display: inline-block;
+  min-width: 1px;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  color: var(--accent);
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+.motion-text {
+  display: inline-block;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+
+.title-window:hover .motion-text {
+  transform: translateY(-1px) rotate(-1deg) scale(1.12);
+}

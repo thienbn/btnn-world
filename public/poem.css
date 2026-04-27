@@ -1,0 +1,24 @@
+/* body {
+  margin: 0;
+  overflow: hidden;
+  background: #1f1f1f;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 10px;
+}
+
+#poem {
+  position: absolute;
+  inset: 0;
+}
+
+#poem div {
+  will-change: transform, opacity;
+  animation: fadeOut 16s linear forwards;
+}
+
+@keyframes fadeOut {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  80%  { opacity: 1; }
+  100% { opacity: 0; }
+} */
