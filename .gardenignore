@@ -1,0 +1,10 @@
+# main
+.*
+index.html
+README.md
+package-lock.json
+package.json
+views/
+src/
+CNAME
+LICENSE
